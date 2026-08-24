@@ -5,7 +5,7 @@ st.sidebar.title("Parametros")
 st.write("Elaborado por: Farid Estefano Garibay Fabian")
 
 st.image("IMAGEN PYTHON.png", width = 300)
-st.sidebar.imagen("IMAGEN DMC.png", width = 100)
+st.sidebar.image("IMAGEN DMC.png", width = 100)
 
 modulos = st.sidebar.selectbox("Seleccione un módulo",["Módulo Listas","Módulo Arreglos","Módulo Funciones"])
 

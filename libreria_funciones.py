@@ -213,18 +213,29 @@ def disponibilidad_servicio(total_horas, horas_caida, mantenimientos_programados
 
     return max(disponibilidad_ajustada, 0)
 
-def interes_simple(capital_inicial=0, tiempo_meses=1, tasa_interes=0.05)
+def interes_simple(capital_inicial=0, tiempo_meses=1, tasa_interes=0.05):
     """
-    Calcula el interés simple.
+    Calcula el interés simple generado por una inversión.
 
     Parámetros:
         capital_inicial (float): Monto inicial de dinero.
         tiempo_meses (int o float): Tiempo en meses.
-        tasa_interes (float): Tasa de interés en decimal.
-                              Ejemplo: 0.05 = 5%
+        tasa_interes (float): Tasa de interés anual en decimal.
+                              Ejemplo: 0.05 = 5%.
 
     Retorna:
         float: Valor del interés simple generado.
     """
+
+    if capital_inicial < 0:
+        raise ValueError("El capital inicial no puede ser negativo.")
+
+    if tiempo_meses < 0:
+        raise ValueError("El tiempo no puede ser negativo.")
+
+    if tasa_interes < 0:
+        raise ValueError("La tasa de interés no puede ser negativa.")
+
     interes = capital_inicial * tasa_interes * (tiempo_meses / 12)
+
     return interes

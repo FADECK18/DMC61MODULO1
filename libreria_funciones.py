@@ -212,3 +212,19 @@ def disponibilidad_servicio(total_horas, horas_caida, mantenimientos_programados
     disponibilidad_ajustada = disponibilidad - penalizacion_pct
 
     return max(disponibilidad_ajustada, 0)
+
+def interes_simple(capital_inicial=0, tiempo_meses=1, tasa_interes=0.05)
+    """
+    Calcula el interés simple.
+
+    Parámetros:
+        capital_inicial (float): Monto inicial de dinero.
+        tiempo_meses (int o float): Tiempo en meses.
+        tasa_interes (float): Tasa de interés en decimal.
+                              Ejemplo: 0.05 = 5%
+
+    Retorna:
+        float: Valor del interés simple generado.
+    """
+    interes = capital_inicial * tasa_interes * (tiempo_meses / 12)
+    return interes
